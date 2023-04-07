@@ -1,0 +1,24 @@
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: hello-world-service
+#spec:
+#  selector:
+#    app: hello-world
+#  ports:
+#    - protocol: TCP
+#      name: hello-world
+#      port: 12010
+#      targetPort: 8080
+apiVersion: v1
+kind: Service
+metadata:
+  name: argofish-service
+spec:
+  selector:
+    app: argofish-app
+  ports:
+    - protocol: TCP
+      name: argofish-app
+      port: 12004
+      targetPort: 80
