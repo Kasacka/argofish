@@ -5,7 +5,7 @@ metadata:
   labels:
     app: argofish-app
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: argofish-app
