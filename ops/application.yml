@@ -14,7 +14,7 @@ spec:
       exclude: '*.json'
   destination:
     server: https://kubernetes.default.svc 
-    namespace: default
+    namespace: argofish
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

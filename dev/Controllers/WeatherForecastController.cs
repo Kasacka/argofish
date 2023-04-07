@@ -77,6 +77,32 @@ public class PersonController : ControllerBase
     }
 }
 
+public class RandomResult
+{
+    public double Number { get; set; }
+    public DateTime DateTime { get; set;}
+    public DateOnly DateOnly { get; set;}
+    //public TimeOnly TimeOnly { get; set;}
+}
+
+[ApiController]
+[Route("[controller]")]
+public class RandomController : ControllerBase
+{
+    private static readonly Random r = new();
+
+    [HttpGet]
+    public RandomResult Get()
+    {
+        var result = new RandomResult();
+        result.Number = r.Next();
+        result.DateTime =  DateTime.UtcNow;
+        result.DateOnly = DateOnly.FromDateTime(DateTime.UtcNow);
+    
+        return result;
+    }
+}
+
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
