@@ -5,7 +5,7 @@ metadata:
   labels:
     app: argofish-app
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: argofish-app
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: argofish-app
-        image: kasacka/argofish:1.1
+        image: kasacka/argofish:2.0
         ports:
         - containerPort: 80
